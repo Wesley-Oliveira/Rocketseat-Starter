@@ -4,16 +4,12 @@
     </head>
     <body>
         <script>
-            // Operadores lógicos
-            // AND &&, OR ||,  NOT != apenas o valor ou !== o valor e o tipo
-            
+            // Condição ternária
             var sexo = 'M';
 
-            //Armazenamento de resultados de condições em variáveis
-            //Variável vai receber true ou false, da comparação que está sendo feita em seguida
-            var masculino = sexo === 'M'; 
-
-            console.log(masculino);
+            // condição -- ? vai ser o resultado da condição se for verdadeiro -- : vai ser o segundo valor, caso tenha entrado no "else"
+            var retorno = (sexo === 'M') ? 'Masculino' : 'Feminino';
+            console.log(retorno);
         </script>
     </body>
 </html>
