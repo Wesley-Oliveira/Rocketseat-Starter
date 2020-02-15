@@ -4,44 +4,20 @@
     </head>
     <body>
         <div id="App">
-            <button class="botao">Aperte aqui para criar uma nova div</button>
+            <ul class="lista"></ul>
         </div>
 
         <script>
-            var btnElement = document.querySelector(['button.botao'])
+            var nomes = ["Diego", "Gabriel", "Lucas"];
 
-            var i = 0;
-            btnElement.onclick = function(){   
-                var elemento = document.createElement('div');
-                elemento.setAttribute('class', 'box' + i)
-
-                var containerElement = document.querySelector('#app');
-                containerElement.appendChild(elemento);
-
-                var boxElement = document.querySelector('.box' + i);
+            var containerElement = document.querySelector(['ul.lista']);
             
-                boxElement.style.width = 100;
-                boxElement.style.height = 100;
-                boxElement.style.backgroundColor = '#f00';
+            for(var i = 0; i < nomes.length; i++){
+                var elemento = document.createElement('li');
+                elemento.textContent = nomes[i];
                 
-                boxElement.onmouseover = function() {
-                    var newColor = getRandomColor();
-                    boxElement.style.backgroundColor = newColor;
-                }
-
-                i++;
-                alert('Div' + i + ' adicionada');
-            }
-
-            function getRandomColor() {
-                var letters = "0123456789ABCDEF";
-                var color = "#";
-                
-                for (var i = 0; i < 6; i++) {
-                    color += letters[Math.floor(Math.random() * 16)];
-                }
-                return color;
-            }
+                containerElement.appendChild(elemento);
+            }            
         </script>
     </body>
 </html>
