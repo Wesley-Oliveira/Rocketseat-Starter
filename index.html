@@ -4,36 +4,16 @@
     </head>
     <body>
         <script>
-            //Criando funções
-            function retornaSexo(sexo){
-                //M, F
-                //Masculino, Feminino
+            // Operadores lógicos
+            // AND &&, OR ||,  NOT != apenas o valor ou !== o valor e o tipo
+            
+            var sexo = 'M';
 
-                //Condicionais - Bem padrão como nas outras linguagens
-                //usar == verifica os valores
-                //usar === verifica valores e tipo
-                
-                if(sexo === 'M') {
-                    return 'Masculino';
-                } else if(sexo === 'F'){
-                    return 'Feminino';
-                } else {
-                    return 'Outro';
-                }
+            //Armazenamento de resultados de condições em variáveis
+            //Variável vai receber true ou false, da comparação que está sendo feita em seguida
+            var masculino = sexo === 'M'; 
 
-                //Bem parecido com o das outras linguagens
-                switch(sexo){
-                    case 'M':
-                        return 'Masculino';
-                    case 'F':
-                        return 'Feminino';
-                    default: 
-                        return 'Outro';
-                }
-            }
-
-            var resultado = retornaSexo('M');
-            console.log(resultado);
+            console.log(masculino);
         </script>
     </body>
 </html>
