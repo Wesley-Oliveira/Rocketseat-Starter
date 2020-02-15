@@ -4,13 +4,18 @@
     </head>
     <body>
         <script>
-            var skills = ["Javascript", "ReactJS", "React Native"];
-            function temHabilidade(skills) {
-                return (skills.indexOf("Javascript", 0) === 0) ? true : false
+            function experiencia(anos) {
+                // código aqui
+                if(anos > 0 && anos <= 1 )
+                    return 'Iniciante';
+                else if (anos > 1 && anos <= 3)
+                    return 'Itermediário';
+                else if (anos > 3 && anos <= 6)
+                    return 'Avançado';
+                else 
+                    return 'Jedi Master';
             }
-
-            var x = temHabilidade(skills); // true ou false
-            console.log(x);
+            console.log(experiencia(7));
         </script>
     </body>
 </html>
