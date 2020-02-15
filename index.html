@@ -4,18 +4,13 @@
     </head>
     <body>
         <script>
-            function pares(x, y) {
-                // código aqui
-
-                for(var i = x; i <= 321; i++)
-                {
-                    if(i % 2 == 0){
-                        console.log(i);
-                    }
-                        
-                }
+            var skills = ["Javascript", "ReactJS", "React Native"];
+            function temHabilidade(skills) {
+                return (skills.indexOf("Javascript", 0) === 0) ? true : false
             }
-            pares(32, 321);
+
+            var x = temHabilidade(skills); // true ou false
+            console.log(x);
         </script>
     </body>
 </html>
