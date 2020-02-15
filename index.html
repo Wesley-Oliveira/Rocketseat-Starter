@@ -4,15 +4,29 @@
     </head>
     <body>
         <div id="App">
-            <div class="box"></div>
+            <button class="botao">Aperte aqui para criar uma nova div</button>
         </div>
 
         <script>
-            var boxElement = document.querySelector('.box');
+            var btnElement = document.querySelector(['button.botao'])
+
+            var i = 0;
+            btnElement.onclick = function(){   
+                var elemento = document.createElement('div');
+                elemento.setAttribute('class', 'box' + i)
+
+                var containerElement = document.querySelector('#app');
+                containerElement.appendChild(elemento);
+
+                var boxElement = document.querySelector('.box' + i);
             
-            boxElement.style.width = 100;
-            boxElement.style.height = 100;
-            boxElement.style.backgroundColor = '#f00';
+                boxElement.style.width = 100;
+                boxElement.style.height = 100;
+                boxElement.style.backgroundColor = '#f00';
+
+                i++;
+                alert('Div' + i + ' adicionada');
+            }
         </script>
     </body>
 </html>
