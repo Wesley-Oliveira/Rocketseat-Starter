@@ -4,16 +4,16 @@
     </head>
     <body>
         <script>
-            var x = 10, y = 5;
+            //Criando funções
+            function soma(numero1, numero2){
+                var resultado = numero1 + numero2;
 
-            //Cuidado ao realizar operações com tipos diferentes, 
-            //se for realizar adição com variáveis string e int, 
-            //vai haver uma cocatenação
+                return resultado;
+            }
 
-            //Operações +, -, /, *, %
-            var resultado = x + y;
-            x += 3; //Para incremento funciona normalmente como nas outras linguagens
-            
+            //É necessário declarar resultado novamente pois ao criar a variável com var, será visível apenas dentro do escopo
+            var resultado = soma(1, 2); 
+
             console.log(resultado);
         </script>
     </body>
