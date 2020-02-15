@@ -4,13 +4,34 @@
     </head>
     <body>
         <div id="App">
-            <button onclick="mostraAlerta()">Me pressione</button>
-            <button onmouseover="mostraAlerta()">Passe por cima</button>
+            <input type="text" name="nome"/>  <!-- id="nome" class="nome"/> -->
+            <button class="botao">Adicionar</button>
         </div>
+
         <script>
-            function mostraAlerta(){
-                alert('Botão foi clicado');
+            //atribuindo valor a variável através do id
+            //var inputElementId = document.getElementById('nome');
+
+            //atribui a variavel um vetor de todos os elementos que tiverem aquela tag
+            //var inputElementTag = document.getElementsByTagName('input')[0];
+
+            //atribui a variavel um vetor de todos os elementos que forem daquela classe
+            //var inputElementClassName = document.getElementsByClassName('nome')[0];
+
+            //querySelector retorna um único elemnto, para pegar todos querySelectorAll
+            //var inputElement = document.querySelector('div#app input');
+            //var inputElement = document.querySelector('input[name=nome]');
+
+            var inputElement = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button.botao');
+
+            btnElement.onclick = function(){
+                //recuperando (pegando) o valor do elemento
+                var text = inputElement.value;
+                alert(text);
             }
+
+            console.log(btnElement);
         </script>
     </body>
 </html>
