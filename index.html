@@ -4,21 +4,18 @@
     </head>
     <body>
         <script>
-           var endereco = {
-               rua: "Rua dos pinheiros",
-               numero: 1293,
-               bairro: "Centro",
-               cidade: "São Paulo",
-               uf: "SP"
-            };
-            
-            function informacoesEndereco(endereco){
-                return 'O usuario mora em ' + endereco.cidade 
-                         + ' / ' + endereco.uf + ', no bairro ' + endereco.bairro
-                         + ', na rua "' + endereco.rua + '" com n° ' + endereco.numero + '.';
-            }
+            function pares(x, y) {
+                // código aqui
 
-            console.log(informacoesEndereco(endereco));
+                for(var i = x; i <= 321; i++)
+                {
+                    if(i % 2 == 0){
+                        console.log(i);
+                    }
+                        
+                }
+            }
+            pares(32, 321);
         </script>
     </body>
 </html>
