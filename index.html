@@ -4,18 +4,21 @@
     </head>
     <body>
         <script>
-            // Intervalo e time out
-            function exibeAlgo(){
-                console.log('Hello World');
-            }
+           var endereco = {
+               rua: "Rua dos pinheiros",
+               numero: 1293,
+               bairro: "Centro",
+               cidade: "São Paulo",
+               uf: "SP"
+            };
             
-            //Um vai funcionar como um loop a cada x segundos (setInterval)
-            //O outro vai funcionar como um delay (setTimeOut)
+            function informacoesEndereco(endereco){
+                return 'O usuario mora em ' + endereco.cidade 
+                         + ' / ' + endereco.uf + ', no bairro ' + endereco.bairro
+                         + ', na rua "' + endereco.rua + '" com n° ' + endereco.numero + '.';
+            }
 
-            //Ao chamar a função apenas pelo nome e sem (), estará chamando apenas
-            //o código dela, desta forma, é possível executar diversas vezes ao invés de apenas uma vez
-            setInterval(exibeAlgo, 1000); //Vai exibir Hello World a cada 1 seg
-            setTimeout(exibeAlgo, 5000); //Vai exibir Hello World depois de 5 segundos e apenas uma vez
+            console.log(informacoesEndereco(endereco));
         </script>
     </body>
 </html>
