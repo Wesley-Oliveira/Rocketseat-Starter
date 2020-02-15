@@ -4,24 +4,15 @@
     </head>
     <body>
         <div id="App">
-            <input id="nome" />
+            <div class="box"></div>
         </div>
 
         <script>
-            //Lidando com elementos, criando elementos
-            var linkElement = document.createElement('a');
-            linkElement.setAttribute('href', 'https://skylab.rocketseat.com.br/');
-            linkElement.setAttribute('title', 'Site da Rocketseat');
-
-            var textElement = document.createTextNode('Acessar site da Rocketseat');
-            linkElement.appendChild(textElement);
-
-            var containerElement = document.querySelector('#app');
-            containerElement.appendChild(linkElement);
-
-            //remove o input da div através do js
-            var inputElement = document.querySelector('#nome');
-            containerElement.removeChild(inputElement);
+            var boxElement = document.querySelector('.box');
+            
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = '#f00';
         </script>
     </body>
 </html>
