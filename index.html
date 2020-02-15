@@ -3,30 +3,14 @@
         <title>Curso Javascript</title>
     </head>
     <body>
+        <div id="App">
+            <button onclick="mostraAlerta()">Me pressione</button>
+            <button onmouseover="mostraAlerta()">Passe por cima</button>
+        </div>
         <script>
-            var usuarios = [
-                {
-                    nome: "Diego",
-                    habilidades: ["Javascript", "ReactJS", "Redux"]
-                },
-
-                {
-                    nome: "Gabriel",
-                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
-                }
-            ];
-
-            var y = '';
-            function possuemHabilidades(usuarios) {
-                for(var habilidades of usuarios)
-                {
-                    var x = 'O ' + habilidades.nome + ' possui as habilidades: ' + habilidades.habilidades + '\n';
-                    y += x;
-                }
-                return y;
+            function mostraAlerta(){
+                alert('Botão foi clicado');
             }
-            
-            console.log(possuemHabilidades(usuarios));
         </script>
     </body>
 </html>
