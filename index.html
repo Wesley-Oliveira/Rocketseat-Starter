@@ -4,18 +4,29 @@
     </head>
     <body>
         <script>
-            function experiencia(anos) {
-                // código aqui
-                if(anos > 0 && anos <= 1 )
-                    return 'Iniciante';
-                else if (anos > 1 && anos <= 3)
-                    return 'Itermediário';
-                else if (anos > 3 && anos <= 6)
-                    return 'Avançado';
-                else 
-                    return 'Jedi Master';
+            var usuarios = [
+                {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+
+                {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                }
+            ];
+
+            var y = '';
+            function possuemHabilidades(usuarios) {
+                for(var habilidades of usuarios)
+                {
+                    var x = 'O ' + habilidades.nome + ' possui as habilidades: ' + habilidades.habilidades + '\n';
+                    y += x;
+                }
+                return y;
             }
-            console.log(experiencia(7));
+            
+            console.log(possuemHabilidades(usuarios));
         </script>
     </body>
 </html>
