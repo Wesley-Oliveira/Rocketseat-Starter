@@ -4,34 +4,24 @@
     </head>
     <body>
         <div id="App">
-            <input type="text" name="nome"/>  <!-- id="nome" class="nome"/> -->
-            <button class="botao">Adicionar</button>
+            <input id="nome" />
         </div>
 
         <script>
-            //atribuindo valor a variável através do id
-            //var inputElementId = document.getElementById('nome');
+            //Lidando com elementos, criando elementos
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href', 'https://skylab.rocketseat.com.br/');
+            linkElement.setAttribute('title', 'Site da Rocketseat');
 
-            //atribui a variavel um vetor de todos os elementos que tiverem aquela tag
-            //var inputElementTag = document.getElementsByTagName('input')[0];
+            var textElement = document.createTextNode('Acessar site da Rocketseat');
+            linkElement.appendChild(textElement);
 
-            //atribui a variavel um vetor de todos os elementos que forem daquela classe
-            //var inputElementClassName = document.getElementsByClassName('nome')[0];
+            var containerElement = document.querySelector('#app');
+            containerElement.appendChild(linkElement);
 
-            //querySelector retorna um único elemnto, para pegar todos querySelectorAll
-            //var inputElement = document.querySelector('div#app input');
-            //var inputElement = document.querySelector('input[name=nome]');
-
-            var inputElement = document.querySelector('input[name=nome]');
-            var btnElement = document.querySelector('button.botao');
-
-            btnElement.onclick = function(){
-                //recuperando (pegando) o valor do elemento
-                var text = inputElement.value;
-                alert(text);
-            }
-
-            console.log(btnElement);
+            //remove o input da div através do js
+            var inputElement = document.querySelector('#nome');
+            containerElement.removeChild(inputElement);
         </script>
     </body>
 </html>
