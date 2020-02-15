@@ -4,19 +4,18 @@
     </head>
     <body>
         <script>
-            // for, while
-
-            //igual o das outras linguagens - indicado usar quando souber o tamanho do intervalo
-            for (var i = 0; i <= 100; i++){
-                console.log(i);
+            // Intervalo e time out
+            function exibeAlgo(){
+                console.log('Hello World');
             }
+            
+            //Um vai funcionar como um loop a cada x segundos (setInterval)
+            //O outro vai funcionar como um delay (setTimeOut)
 
-            //igual o das outras linguagens - indicado usar quando não souber o tamanho do intervalo
-            var j = 28138475;
-            while (j > 50){
-                console.log(j);
-                j /= 5;
-            }
+            //Ao chamar a função apenas pelo nome e sem (), estará chamando apenas
+            //o código dela, desta forma, é possível executar diversas vezes ao invés de apenas uma vez
+            setInterval(exibeAlgo, 1000); //Vai exibir Hello World a cada 1 seg
+            setTimeout(exibeAlgo, 5000); //Vai exibir Hello World depois de 5 segundos e apenas uma vez
         </script>
     </body>
 </html>
