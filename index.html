@@ -5,15 +5,34 @@
     <body>
         <script>
             //Criando funções
-            function soma(numero1, numero2){
-                var resultado = numero1 + numero2;
+            function retornaSexo(sexo){
+                //M, F
+                //Masculino, Feminino
 
-                return resultado;
+                //Condicionais - Bem padrão como nas outras linguagens
+                //usar == verifica os valores
+                //usar === verifica valores e tipo
+                
+                if(sexo === 'M') {
+                    return 'Masculino';
+                } else if(sexo === 'F'){
+                    return 'Feminino';
+                } else {
+                    return 'Outro';
+                }
+
+                //Bem parecido com o das outras linguagens
+                switch(sexo){
+                    case 'M':
+                        return 'Masculino';
+                    case 'F':
+                        return 'Feminino';
+                    default: 
+                        return 'Outro';
+                }
             }
 
-            //É necessário declarar resultado novamente pois ao criar a variável com var, será visível apenas dentro do escopo
-            var resultado = soma(1, 2); 
-
+            var resultado = retornaSexo('M');
             console.log(resultado);
         </script>
     </body>
