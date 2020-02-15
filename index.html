@@ -4,24 +4,17 @@
     </head>
     <body>
         <script>
-            //Variavéis com tipagem dinâmica, variáveis primitivas
-            var nome = "Diego"; //string
-            var idade = 23; // int
-            var peso = 80.5; // float
-            var humano = true; // boolean
+            var x = 10, y = 5;
 
-            var alunos = ['Diego', 'Gabriel', 'Lucas']; //vetor
+            //Cuidado ao realizar operações com tipos diferentes, 
+            //se for realizar adição com variáveis string e int, 
+            //vai haver uma cocatenação
 
-            //Objeto
-            var aluno = {
-                nome: alunos[2],
-                idade: 23,
-                peso: 80.5,
-                humano: true
-            };
-
-            console.log(alunos[1]); //print no console do navegador
-            console.log(aluno.nome);
+            //Operações +, -, /, *, %
+            var resultado = x + y;
+            x += 3; //Para incremento funciona normalmente como nas outras linguagens
+            
+            console.log(resultado);
         </script>
     </body>
 </html>
