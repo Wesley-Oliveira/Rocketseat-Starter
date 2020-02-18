@@ -18,22 +18,25 @@ function renderRepos() {
 renderRepos();
 
 function find() {
-    repos = [];
+    repos = ['Carregando...'];
     renderRepos();
-    
+
+    repos = [];
     nomeUser = inputElement.value;
 
     axios.get('https://api.github.com/users/'+ nomeUser +'/repos')
     .then(function(response) {
-        console.log(response.data.length);
-
         for(var i = 0; i < response.data.length; i++){
             repos.push(response.data[i].name)
         }
+        console.log(response.status)
         renderRepos();
     })
     .catch(function(error) {
-        console.log(error);
+        repos = [];
+        renderRepos();
+        console.log(error.response.status);
+        alert(error.message);
     });
 }
 
