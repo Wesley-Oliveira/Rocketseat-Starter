@@ -1,24 +1,20 @@
 "use strict";
 
-// Operações com Arrays
-var arr = [1, 3, 4, 5, 8, 9]; // map - percorre todo o vetor e retorna um informação
+// arrow functions -- Funções anônimas
+var arr = [1, 3, 4, 5, 8, 9]; //Várias formas de utilizar
 
-var newArr = arr.map(function (item, index) {
-  return item + index;
+var newArr1 = arr.map(function (item) {
+  return item * 2;
 });
-console.log(newArr); //reduce, consumir todo o vetor e colocar todas a informmação em uma variável
+var newArr2 = arr.map(function (item, index) {
+  return item * index;
+});
+var newArr3 = arr.map(function (item) {
+  return item * 2;
+}); //Para retornar objeto, precisa adicionar os parênteses antes das chaves do objeto
 
-var sum = arr.reduce(function (total, next) {
-  return total + next;
-});
-console.log(sum); //filtrar o array, vai retornar true ou false
-
-var filter = arr.filter(function (item) {
-  return item % 2 === 0;
-});
-console.log(filter); // verificar se exister uma informação no array
-
-var find = arr.find(function (item) {
-  return item === 4;
-});
-console.log(find);
+var teste = function teste() {
+  return {
+    nome: 'teste'
+  };
+};
