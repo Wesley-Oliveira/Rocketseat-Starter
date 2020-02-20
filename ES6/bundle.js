@@ -1,9 +1,13 @@
 "use strict";
 
-// Template literals
-var nomme = "Diego";
-var idade = 23; // Normalmente
+// Object Short Syntax
+var nome = 'Diego';
+var idade = 23; // Parar repassar informações para dentro de um objeto
+// Se a propriedade tiver o mesmo nome da variável, podemos deixar apenas 1
 
-console.log('Meu nome é ' + nome + 'e tenho ' + idade + ' anos'); // Com template literals
-
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos."));
+var usuario = {
+  nome: nome,
+  idade: idade,
+  empresa: 'Rocketseat'
+};
+console.log(usuario);

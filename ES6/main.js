@@ -1,10 +1,14 @@
-// Template literals
+// Object Short Syntax
 
-const nomme = "Diego";
+const nome = 'Diego';
 const idade = 23;
 
-// Normalmente
-console.log('Meu nome é ' + nome + 'e tenho ' + idade + ' anos');
+// Parar repassar informações para dentro de um objeto
+// Se a propriedade tiver o mesmo nome da variável, podemos deixar apenas 1
+const usuario = {
+    nome,
+    idade,
+    empresa: 'Rocketseat',
+};
 
-// Com template literals
-console.log(`Meu nome é ${nome} e tenho ${idade} anos.`)
+console.log(usuario);
