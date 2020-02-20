@@ -4,4 +4,5 @@ Iniciar o arquivo de configurações:
 Adicionar dependencias:
 	Add-Babel: yarn add @babel/cli
 	Add-Preset-env: yarn add @babel/preset-env
-	Add-Babel-COre: yarn add @babel/core
+	Add-Babel-Core: yarn add @babel/core
+	Add-Plugin: yarn add @babel/plugin-proposal-object-rest-spread
