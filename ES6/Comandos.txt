@@ -1,0 +1,7 @@
+Iniciar o arquivo de configurações:
+	yarn init;
+
+Adicionar dependencias:
+	Add-Babel: yarn add @babel/cli
+	Add-Preset-env: yarn add @babel/preset-env
+	Add-Babel-COre: yarn add @babel/core
