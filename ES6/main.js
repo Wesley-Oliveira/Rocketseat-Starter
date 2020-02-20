@@ -1,11 +1,34 @@
-//Valores padrão
+// Desestruturação de objetos
 
-function soma1(a = 3, b = 6) {
-    return a + b;
+const usuario = {
+    nome: 'Diego',
+    idade: 23,
+    endereco: {
+        cidade: 'Rio do Sul',
+        estado: 'SC',
+    },
+};
+
+// Normalmente
+// const nome = usuario.nome;
+// const idade = usuario.idade;
+// const cidade = usuario.endereco.cidade;
+
+// Com desestruturação
+const { nome, idade, endereco: { cidade } } = usuario;
+
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+// Normalmente
+// function mostraNome(usuario) {
+//     console.log(usuario.nome);
+// }
+
+// Com desestruturação
+function mostraNome( { nome, idade }) {
+    console.log(nome, idade);
 }
 
-//Usando a sintaxe de arrow function
-const soma2 = (a = 3, b = 6) => a + b;
-
-console.log(soma1(1));
-console.log(soma2());
+mostraNome(usuario);
