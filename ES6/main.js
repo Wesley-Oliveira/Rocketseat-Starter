@@ -1,14 +1,26 @@
-// Object Short Syntax
+class Usuario {
+    constructor( email, senha ) {
+        this.email = email;
+        this.senha = senha;
+    }
 
-const nome = 'Diego';
-const idade = 23;
+    isAdmin() {
+        if(this.admin == true)
+            return true;
+        else
+            return false;
+    }
+}
 
-// Parar repassar informações para dentro de um objeto
-// Se a propriedade tiver o mesmo nome da variável, podemos deixar apenas 1
-const usuario = {
-    nome,
-    idade,
-    empresa: 'Rocketseat',
+class Admin extends Usuario{
+    constructor() {
+        super();   
+        this.admin = true;
+    }
 };
 
-console.log(usuario);
+const User1 = new Usuario('User@teste.com', 'senha123');
+const Adm1 = new Admin('Admin@teste.com', 'senha123');
+
+console.log(User1.isAdmin()) // false
+console.log(Adm1.isAdmin()) // true
