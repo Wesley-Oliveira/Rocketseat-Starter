@@ -1,25 +1,24 @@
 "use strict";
 
-// não pode ter o valor reatribuido
-var a = 1; // o valor vai continuar 1 mesmo que eu tente atribuir um novo valor, porém ainda é possível mutar um const
-//mutação, trabalha com o mesmo formato do objeto porém altera valores dentro do objeto
+// Operações com Arrays
+var arr = [1, 3, 4, 5, 8, 9]; // map - percorre todo o vetor e retorna um informação
 
-var usuario = {
-  nome: 'Diego'
-};
-usuario.nome = 'Cleiton';
-console.log(usuario); //Variaveis de escopo
+var newArr = arr.map(function (item, index) {
+  return item + index;
+});
+console.log(newArr); //reduce, consumir todo o vetor e colocar todas a informmação em uma variável
 
-function teste(x) {
-  //Só é visível dentro do escopo, no caso da função
-  var y = 2;
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum); //filtrar o array, vai retornar true ou false
 
-  if (x > 5) {
-    var _y = 4;
-    console.log(x, _y); // printa 4 pq o y deste escopo é 4
-  }
+var filter = arr.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(filter); // verificar se exister uma informação no array
 
-  console.log(x, y); // printa 2 pq o y deste escopo é 2
-}
-
-teste(10);
+var find = arr.find(function (item) {
+  return item === 4;
+});
+console.log(find);

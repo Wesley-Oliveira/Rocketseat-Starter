@@ -1,20 +1,31 @@
-// não pode ter o valor reatribuido
-const a = 1; // o valor vai continuar 1 mesmo que eu tente atribuir um novo valor, porém ainda é possível mutar um const
+// Operações com Arrays
 
-//mutação, trabalha com o mesmo formato do objeto porém altera valores dentro do objeto
-const usuario = { nome: 'Diego'};
-usuario.nome = 'Cleiton';
-console.log(usuario);
+const arr = [1, 3, 4, 5, 8, 9];
 
-//Variaveis de escopo
-function teste(x) {
-    //Só é visível dentro do escopo, no caso da função
-    let y = 2;
+// map - percorre todo o vetor e retorna um informação
+const newArr = arr.map(function(item, index) {
+    return item + index;
+});
 
-    if (x > 5) {
-        let y = 4;
-        console.log(x, y); // printa 4 pq o y deste escopo é 4
-    }
-    console.log(x, y); // printa 2 pq o y deste escopo é 2
-}
-teste(10);
+console.log(newArr);
+
+//reduce, consumir todo o vetor e colocar todas a informmação em uma variável
+const sum = arr.reduce(function(total, next) {
+    return total + next;
+});
+
+console.log(sum);
+
+//filtrar o array, vai retornar true ou false
+const filter = arr.filter(function(item){
+    return item % 2 === 0;
+});
+
+console.log(filter);
+
+// verificar se exister uma informação no array
+const find = arr.find(function(item){
+    return item === 4;
+});
+
+console.log(find);
