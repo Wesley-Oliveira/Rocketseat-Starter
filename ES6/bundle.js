@@ -1,20 +1,18 @@
 "use strict";
 
-// arrow functions -- Funções anônimas
-var arr = [1, 3, 4, 5, 8, 9]; //Várias formas de utilizar
+//Valores padrão
+function soma1() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
+} //Usando a sintaxe de arrow function
 
-var newArr1 = arr.map(function (item) {
-  return item * 2;
-});
-var newArr2 = arr.map(function (item, index) {
-  return item * index;
-});
-var newArr3 = arr.map(function (item) {
-  return item * 2;
-}); //Para retornar objeto, precisa adicionar os parênteses antes das chaves do objeto
 
-var teste = function teste() {
-  return {
-    nome: 'teste'
-  };
+var soma2 = function soma2() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
 };
+
+console.log(soma1(1));
+console.log(soma2());
