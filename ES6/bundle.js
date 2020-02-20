@@ -1,100 +1,25 @@
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+// não pode ter o valor reatribuido
+var a = 1; // o valor vai continuar 1 mesmo que eu tente atribuir um novo valor, porém ainda é possível mutar um const
+//mutação, trabalha com o mesmo formato do objeto porém altera valores dentro do objeto
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var List =
-/*#__PURE__*/
-function () {
-  function List() {
-    _classCallCheck(this, List);
-
-    this.data = [];
-  }
-
-  _createClass(List, [{
-    key: "add",
-    value: function add(data) {
-      this.data.push(data);
-      console.log(this.data);
-    } // Método estático não vai enxergar o restante da classe, serve mais pra passar uma informação para ele te devolver outra: ex abaixo na class Matematica
-
-  }], [{
-    key: "addTodo",
-    value: function addTodo() {
-      this.todos.push('Novo todo');
-      console.log(this.todos);
-    }
-  }]);
-
-  return List;
-}();
-
-var Matematica =
-/*#__PURE__*/
-function () {
-  function Matematica() {
-    _classCallCheck(this, Matematica);
-  }
-
-  _createClass(Matematica, null, [{
-    key: "soma",
-    value: function soma(a, b) {
-      return a + b;
-    }
-  }]);
-
-  return Matematica;
-}();
-
-console.log(Matematica.soma(1, 3)); // List.addTodo(); //Vai gerar erro pois o addTodo não enxerga o resto da classe por ser static
-//Herança
-
-var TodoList =
-/*#__PURE__*/
-function (_List) {
-  _inherits(TodoList, _List);
-
-  function TodoList() {
-    var _this;
-
-    _classCallCheck(this, TodoList);
-
-    // Chamar o constructor da classe pai
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this));
-    _this.usuario = 'Diego';
-    return _this;
-  }
-
-  _createClass(TodoList, [{
-    key: "mostraUsuario",
-    value: function mostraUsuario() {
-      console.log(this.usuario);
-    }
-  }]);
-
-  return TodoList;
-}(List);
-
-var MinhaLista = new TodoList(); //Instanciando a classe
-
-document.getElementById('novotodo').onclick = function () {
-  MinhaLista.add('Novo todo');
+var usuario = {
+  nome: 'Diego'
 };
+usuario.nome = 'Cleiton';
+console.log(usuario); //Variaveis de escopo
 
-MinhaLista.mostraUsuario();
+function teste(x) {
+  //Só é visível dentro do escopo, no caso da função
+  var y = 2;
+
+  if (x > 5) {
+    var _y = 4;
+    console.log(x, _y); // printa 4 pq o y deste escopo é 4
+  }
+
+  console.log(x, y); // printa 2 pq o y deste escopo é 2
+}
+
+teste(10);

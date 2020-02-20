@@ -1,47 +1,20 @@
-class List {
-    constructor() {
-        this.data = [];
-    }
+// não pode ter o valor reatribuido
+const a = 1; // o valor vai continuar 1 mesmo que eu tente atribuir um novo valor, porém ainda é possível mutar um const
 
-    add(data) {
-        this.data.push(data);
-        console.log(this.data);
-    }
+//mutação, trabalha com o mesmo formato do objeto porém altera valores dentro do objeto
+const usuario = { nome: 'Diego'};
+usuario.nome = 'Cleiton';
+console.log(usuario);
 
-    // Método estático não vai enxergar o restante da classe, serve mais pra passar uma informação para ele te devolver outra: ex abaixo na class Matematica
-    static addTodo() {
-        this.todos.push('Novo todo');
-        console.log(this.todos);
+//Variaveis de escopo
+function teste(x) {
+    //Só é visível dentro do escopo, no caso da função
+    let y = 2;
+
+    if (x > 5) {
+        let y = 4;
+        console.log(x, y); // printa 4 pq o y deste escopo é 4
     }
+    console.log(x, y); // printa 2 pq o y deste escopo é 2
 }
-
-class Matematica {
-    static soma(a, b){
-        return a + b;
-    }
-}
-
-console.log(Matematica.soma(1,3));
-// List.addTodo(); //Vai gerar erro pois o addTodo não enxerga o resto da classe por ser static
-
-
-//Herança
-class TodoList extends List{
-    constructor() {
-        // Chamar o constructor da classe pai
-        super();
-        this.usuario = 'Diego';
-    }
-    
-    mostraUsuario() {
-        console.log(this.usuario);
-    }
-}
-
-var MinhaLista = new TodoList(); //Instanciando a classe
-
-document.getElementById('novotodo').onclick = function() {
-    MinhaLista.add('Novo todo');
-}
-
-MinhaLista.mostraUsuario();
+teste(10);
