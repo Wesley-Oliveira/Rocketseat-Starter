@@ -1,38 +1,40 @@
 "use strict";
 
-var usuarios = [{
+// Q4.1
+var empresa = {
+  nome: 'Rocketseat',
+  endereco: {
+    cidade: 'Rio do Sul',
+    estado: 'SC'
+  }
+};
+var nome = empresa.nome,
+    _empresa$endereco = empresa.endereco,
+    cidade = _empresa$endereco.cidade,
+    estado = _empresa$endereco.estado;
+console.log(nome); // Rocketseat
+
+console.log(cidade); // Rio do Sul
+
+console.log(estado); // SC   
+// Q4.2  
+
+var usuario = {
   nome: 'Diego',
   idade: 23,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Gabriel',
-  idade: 15,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Lucas',
-  idade: 30,
-  empresa: 'Facebook'
-}]; // Q2.1 Usando map - Crie uma variável que contenha todas idades dos usuários: [23, 15, 30]
+  endereco: {
+    cidade: 'Rio do Sul',
+    estado: 'SC'
+  }
+};
 
-var arrIdades = usuarios.map(function (item) {
-  return item.idade;
-});
-console.log(arrIdades); // Q2.2 Usando filter - Crie uma variável que tenha apenas os usuários que trabalham na Rocketseat e com mais de 18 anos: 
+function mostraInfo(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  return "".concat(nome, " tem ").concat(idade, " anos.");
+}
 
-var arrUsuarios = usuarios.filter(function (item) {
-  if (item.idade > 18) return item;
-});
-console.log(arrUsuarios); // Q2.3 Usando find - Crie uma variável que procura por um usuário que trabalhe na empresa Google: undefined
-
-var findEmpresa = usuarios.find(function (item) {
-  if (item.empresa == 'Google') return item.nome;
-});
-console.log(findEmpresa); // Q2.4 Unindo operações Multiplique a idade de todos usuários por dois e depois realize um filtro nos usuários que possuem no máximo 50 anos:
-
-var arrMultiplicaIdade = usuarios.map(function (item) {
-  item.idade *= 2;
-  return item;
-}).filter(function (item) {
-  return item.idade < 50;
-});
-console.log(arrMultiplicaIdade);
+console.log(mostraInfo({
+  nome: 'Diego',
+  idade: 23
+}));
