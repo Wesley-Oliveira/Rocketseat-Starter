@@ -26,3 +26,6 @@ Para configurar async e await:
 		   yarn add @babel/polyfill -D
 	Adicionar ao babelrc "@babel/plugin-transform-async-to-generator"
 	Adicionar no entry do webpack @babel/polyfill 
+
+Adicionando axios:
+	yarn add axios

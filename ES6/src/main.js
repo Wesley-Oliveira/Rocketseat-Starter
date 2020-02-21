@@ -1,34 +1,16 @@
-const minhaPromise = () => new Promise((resolve, reject) => {
-    setTimeout(() => {resolve('Ok')}, 2000);
-});
+import axios from 'axios';
 
-
-//Só pode usar um await se estiver dentro de uma função async
-//Com async - await
-async function executaPromise() {
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
-
-    //sem async -await
-    // minhaPromise().then(response => {
-    //     console.log(response);
-
-    //     minhaPromise().then(response => {
-    //         console.log(response);
-
-    //         minhaPromise().then(response => {
-    //             console.log(response);
-    //         })
-    //     })
-    // })
+class Api {
+    //todo retorno do axios, retorna promises
+    static async getUserInfo(username) {
+        try{
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);
+        } catch(err) {
+            console.warn('Erro na API');
+        }
+    }
 }
 
-// É possível utilizar tmb com arrow function
-const executaPromise2 = async () => {
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
-    console.log(await minhaPromise());
-}
-
-executaPromise2();
+Api.getUserInfo('Wesley-Oliveira');
+Api.getUserInfo('Wesley-Oliveiraasdasdasd');
