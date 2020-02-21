@@ -20,3 +20,9 @@ Configurando webpack:
 Para gerar build:
 criar um comando em package.json, dentro do "scripts": 
 	"build": "webpack --mode=production"
+
+Para configurar async e await:
+	Add-Plugin: yarn add @babel/plugin-transform-async-to-generator -D
+		   yarn add @babel/polyfill -D
+	Adicionar ao babelrc "@babel/plugin-transform-async-to-generator"
+	Adicionar no entry do webpack @babel/polyfill 
