@@ -13,3 +13,10 @@ Configurando webpack:
 
 	yarn add webpack webpack-cli -D
 	yarn add babel-loader -D
+
+-- webpack-dev-server
+	yarn add webpack-dev-server -D
+
+Para gerar build:
+criar um comando em package.json, dentro do "scripts": 
+	"build": "webpack --mode=production"
