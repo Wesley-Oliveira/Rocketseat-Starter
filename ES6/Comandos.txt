@@ -6,3 +6,10 @@ Adicionar dependencias:
 	Add-Preset-env: yarn add @babel/preset-env
 	Add-Babel-Core: yarn add @babel/core
 	Add-Plugin: yarn add @babel/plugin-proposal-object-rest-spread
+
+Substituir em package.json "dependencies" por -> "devDependecies"
+Configurando webpack:
+	criar arquivo webpack.js e configurá-lo
+
+	yarn add webpack webpack-cli -D
+	yarn add babel-loader -D

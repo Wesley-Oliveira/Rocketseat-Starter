@@ -1,10 +1,3 @@
-//Q7 - Object short syntax
+import { soma } from './funcoes';
 
-const nome = 'Diego';
-const idade = 23;
-
-const usuario = {
-    nome,
-    idade,
-    cidade: 'Rio do Sul',
-};
+console.log(soma(1, 2));
