@@ -1,41 +1,41 @@
 "use strict";
 
-var usuarios = [{
+// 3.1
+var arr = [1, 2, 3, 4, 5];
+arr.map(function (item) {
+  return item + 10;
+}); // 3.2
+// Dica: Utilize uma constante pra function
+
+var usuario = {
   nome: 'Diego',
-  idade: 23,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Gabriel',
-  idade: 15,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Lucas',
-  idade: 30,
-  empresa: 'Facebook'
-}]; // Q2.1 Usando map - Crie uma variável que contenha todas idades dos usuários: [23, 15, 30]
+  idade: 23
+};
 
-var arrIdades = usuarios.map(function (item) {
-  return item.idade;
-});
-console.log(arrIdades); // Q2.2 Usando filter - Crie uma variável que tenha apenas os usuários que trabalham na Rocketseat e com mais de 18 anos: 
+var mostraIdade = function mostraIdade(usuario) {
+  return usuario.idade;
+};
 
-var arrUsuarios = usuarios.filter(function (item) {
-  if (item.idade > 18) return item;
-});
-console.log(arrUsuarios); // Q2.3 Usando find - Crie uma variável que procura por um usuário que trabalhe na empresa Google: undefined
+console.log(mostraIdade(usuario)); // 3.3
+// Dica: Utilize uma constante pra function
 
-var findEmpresa = usuarios.find(function (item) {
-  if (item.empresa == 'Google') return item.nome;
-});
-console.log(findEmpresa); // Q2.4 Unindo operações Multiplique a idade de todos usuários por dois e depois realize um filtro nos usuários que possuem no máximo 50 anos:
+var nome = "Diego";
+var idade = 23;
 
-var arrMultiplicaIdade = usuarios.map(function (item) {
-  item.idade *= 2;
-  return item;
-});
-var arrFilterMultiplicaIdade = arrMultiplicaIdade.filter(function (item) {
-  if (item.idade < 50) {
-    return item;
-  }
-});
-console.log(arrFilterMultiplicaIdade);
+var mostraUsuario = function mostraUsuario() {
+  var nome = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Diego';
+  var idade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
+  return {
+    nome: nome,
+    idade: idade
+  };
+};
+
+console.log(mostraUsuario(nome, idade));
+console.log(mostraUsuario(nome)); // 3.4
+
+var promise = function promise() {
+  return new Promise(function (resolve, reject) {
+    return resolve();
+  });
+};
