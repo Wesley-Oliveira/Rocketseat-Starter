@@ -1,3 +1,14 @@
-export function soma (a, b){
+//Para exportar utilizar export
+
+//Export default
+export default function soma (a, b){
     return a + b;
+}
+
+export function sub (a, b){
+    return a - b;
+}
+
+export function mult (a, b){
+    return a * b;
 }

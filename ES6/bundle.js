@@ -90,11 +90,11 @@
 /*!********************!*\
   !*** ./funcoes.js ***!
   \********************/
-/*! exports provided: soma */
+/*! exports provided: default, sub, mult */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"soma\", function() { return soma; });\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return soma; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sub\", function() { return sub; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mult\", function() { return mult; });\n//Para exportar utilizar export\n//Export default\nfunction soma(a, b) {\n  return a + b;\n}\nfunction sub(a, b) {\n  return a - b;\n}\nfunction mult(a, b) {\n  return a * b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _funcoes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n\nconsole.log(Object(_funcoes__WEBPACK_IMPORTED_MODULE_0__[\"soma\"])(1, 2));\n\n//# sourceURL=webpack:///./main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _funcoes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n//Importando uma função específica\n//Para renomear a função passando funções específicas\n//import { soma, sub } from './funcoes';\n//import { soma as somaFunction, sub } from './funcoes';\n//Importando com default e específica\n//import soma, { sub } from './funcoes';\n//Para importar todas as funções para uma única variável\n //Importando com export default\n//import soma from './funcoes';\n\nconsole.log(_funcoes__WEBPACK_IMPORTED_MODULE_0__[\"default\"](1, 3)); // Para pegar a função default\n//console.log(funcoes.soma(1, 2)); //Gerou um erro, ele não conseguiu encontrar a função default\n\nconsole.log(_funcoes__WEBPACK_IMPORTED_MODULE_0__[\"sub\"](1, 2));\nconsole.log(_funcoes__WEBPACK_IMPORTED_MODULE_0__[\"mult\"](1, 2));\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ })
 
