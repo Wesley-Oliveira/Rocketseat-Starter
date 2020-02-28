@@ -8,7 +8,7 @@ const app = express();
 //req-> simboliza a requisição pro servidor (parâmetros, cabeçalho da requisição, usuário, ip)
 //res-> resposta que vai dar para a requisição
 app.get('/', (req, res) => {
-    res.send("Hello Rocketseat");
+    res.send("Hello ");
 })
 
 //ouvindo na porta 3001, rodando na porta 3001
