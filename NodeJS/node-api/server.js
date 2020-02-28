@@ -5,6 +5,8 @@ const requireDir = require('require-dir');
 
 // Iniciando o App
 const app = express();
+// Permite que eu envie informações no formato de json
+app.use(express.json());
 
 // Iniciando o DB
 mongoose.connect('mongodb+srv://admin:admin123@cluster0-gke9r.mongodb.net/nodeapi?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
