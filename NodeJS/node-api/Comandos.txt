@@ -3,3 +3,5 @@ npm install express
 npm install -D nodemon
 npm install mongoose
 npm install require-dir // bibioteca que serve para fazer todos os requires buscando em todos os arquivos, para facilitar
+npm install mongoose-paginate
+npm install cors
